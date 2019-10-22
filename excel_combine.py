@@ -1,9 +1,8 @@
 import openpyxl, os, glob, numpy
 
 #file utama
-#file_name = input("Masukkan nama file utama yang akan dijadikan file hasil penggabungan: ")
-#file_fullname = file_name + ".xlsx"
-file_fullname = "kredit gabungan.xlsx"
+file_name = input("Masukkan nama file utama yang akan dijadikan file hasil penggabungan: ")
+file_fullname = file_name + ".xlsx"
 file_combination = openpyxl.load_workbook(file_fullname)
 file_sheet = file_combination['Sheet1']
 
@@ -49,12 +48,14 @@ def file_combine(folder, skip_row, skip_footer, skip_left, skip_right, skip_blan
             x += 1
 
 #setup
+'''
 workbook_folder = "Pas kredit 2"
 skip_row = 21
 skip_footer = 3
 skip_left = 2
 skip_right = 0
 skip_blank = [3, 4, 5, 6, 7, 18, 19, 23, 24, 25, 27, 28, 30, 45, 52]
+'''
 
 file_combine(workbook_folder, skip_row, skip_footer, skip_left, skip_right, skip_blank, file_sheet, x=0)        
 file_combination.save(file_fullname)
