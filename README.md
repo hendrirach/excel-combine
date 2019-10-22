@@ -25,7 +25,7 @@ Then, we clean the excel file by stating unwanted part such as: top row, left si
 
 #### Example of unwanted part of the file:
 
-![image of excel cleaning setup](https://hendriyono.files.wordpress.com/2019/10/excel-cleaning-final-e1571732454294.png)
+![image of excel cleaning setup](https://hendriyono.files.wordpress.com/2019/10/excel-cleaning-fin-e1571772803451.png)
 
 #### The cleaned file:
 
