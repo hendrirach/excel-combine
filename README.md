@@ -35,7 +35,7 @@ Then, we clean the excel file by stating unwanted part such as: top row, left si
 
 ![image of final file](https://hendriyono.files.wordpress.com/2019/10/combined-file-e1571733649282.png)
 
-The code will guide you in defining the unwanted part. Just press start!
+The code will guide you in defining the unwanted part. Just download all of the files on this site, install the components needed, and press start!
 
 You will need to have numpy and openpyxl packages installed. Check the requirements.txt file. 
 If you find difficulties in setting up this code, please contact me via email: hendri.rach at gmail.com or via instagram: (at)hendriyono
