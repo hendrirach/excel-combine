@@ -26,19 +26,19 @@ def file_combine(folder, skip_row, skip_footer, skip_left, skip_right, skip_blan
     workbook_files = glob.glob("*.xlsx")
     for file in workbook_files:
         #print(x)
-        if x < len(workbook_files): 
+        if x < len(workbook_files):
             #print(file)
             workbook = openpyxl.load_workbook(file)
             worksheet = workbook['Sheet1']
-            worksheet_row = worksheet.max_row - skip_footer
+            worksheet_row = worksheet.max_row - (skip_footer - 1)
             print(worksheet_row)
             worksheet_column = worksheet.max_column - skip_right
             print(worksheet_column)
             file_row = file_sheet.max_row
 
-            for r in range(skip_row, worksheet_row, 1):
-                print(r)
-                data = [worksheet.cell(row = r, column = col).value for col in range(skip_left, worksheet_column, 1)]
+            for r in range(skip_row + 1, worksheet_row, 1):
+                print(r)    
+                data = [worksheet.cell(row = r, column = col).value for col in range(skip_left, worksheet_column + 1, 1)]
                 #hapus column kosong/merge
                 data = numpy.delete(data, skip_blank)
             
@@ -46,16 +46,6 @@ def file_combine(folder, skip_row, skip_footer, skip_left, skip_right, skip_blan
                     file_sheet.cell(row = file_row + 1, column = index + 1).value = value
                 file_row += 1
             x += 1
-
-#setup
-'''
-workbook_folder = "Pas kredit 2"
-skip_row = 21
-skip_footer = 3
-skip_left = 2
-skip_right = 0
-skip_blank = [3, 4, 5, 6, 7, 18, 19, 23, 24, 25, 27, 28, 30, 45, 52]
-'''
 
 file_combine(workbook_folder, skip_row, skip_footer, skip_left, skip_right, skip_blank, file_sheet, x=0)        
 file_combination.save(file_fullname)
